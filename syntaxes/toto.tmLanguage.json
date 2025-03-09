@@ -1,0 +1,17 @@
+{
+    "scopeName": "source.totoscript",
+    "patterns": [
+        {
+            "match": "\\b(var|if|else|while|print)\\b",
+            "name": "keyword.control.totoscript"
+        },
+        {
+            "match": "\\b[0-9]+\\b",
+            "name": "constant.numeric.totoscript"
+        },
+        {
+            "match": "\".*?\"",
+            "name": "string.quoted.double.totoscript"
+        }
+    ]
+}

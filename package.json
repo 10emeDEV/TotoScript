@@ -1,0 +1,32 @@
+{
+    "name": "totoscript",
+    "displayName": "TotoScript",
+    "description": "Extension for my simple programming language TotoScript, based on C++. A new project that I made for fun : - syntax working with french keywords and expressions, - adding some special features",
+    "version": "1.3.0",
+    "publisher": "10eme",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/10emeDEV/totoscript-vscode.git"
+    },
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": ["Programming Languages"],
+    "contributes": {
+        "languages": [
+            {
+                "id": "totoscript",
+                "aliases": ["TotoScript", "toto"],
+                "extensions": [".toto"],
+                "configuration": "./languages/toto.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "totoscript",
+                "scopeName": "source.totoscript",
+                "path": "./syntaxes/toto.tmLanguage.json"
+            }
+        ]
+    }
+}

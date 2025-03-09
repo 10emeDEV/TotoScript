@@ -1,0 +1,11 @@
+{
+    "comments": {
+        "lineComment": "//"
+    },
+    "executables": {
+        "run": {
+            "command": "gtoto",
+            "args": ["${file}"]
+        }
+    }
+}
