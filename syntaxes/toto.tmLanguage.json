@@ -36,18 +36,7 @@
                 "0": { "name": "punctuation.definition.variable.totoscript" }, 
                 "1": { "name": "variable.other.totoscript" }
             }
-        },
-        {
-            "match": "[{}]",
-            "name": "punctuation.section.block.totoscript"
-        },        
-        {
-            "match": "[\\[\\]]",
-            "name": "punctuation.definition.parameters.totoscript"
-        },
-        {
-            "match": "[()]",
-            "name": "punctuation.definition.group.totoscript"
-        }        
+        }      
     ]
+    
 }
