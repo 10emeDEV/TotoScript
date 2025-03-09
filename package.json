@@ -13,6 +13,10 @@
     },
     "categories": ["Programming Languages"],
     "contributes": {
+        "configurationDefaults": {
+            "editor.bracketPairColorization.enabled": true,
+            "editor.guides.bracketPairs": "active"
+        },
         "languages": [
             {
                 "id": "totoscript",
