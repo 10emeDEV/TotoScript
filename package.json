@@ -13,16 +13,12 @@
     },
     "categories": ["Programming Languages"],
     "contributes": {
-        "configurationDefaults": {
-            "editor.bracketPairColorization.enabled": true,
-            "editor.guides.bracketPairs": "active"
-        },
         "languages": [
             {
                 "id": "totoscript",
-                "aliases": ["TotoScript", "toto"],
                 "extensions": [".toto"],
-                "configuration": "./languages/toto.json"
+                "aliases": ["TotoScript"],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
