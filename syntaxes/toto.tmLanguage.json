@@ -2,11 +2,11 @@
     "scopeName": "source.totoscript",
     "patterns": [
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|ou|et|non)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
             "name": "keyword.control.totoscript"
         },
         {
-            "match": "\\b(Afficher|Saisir|Supprimer|Aleatoire)\\b",
+            "match": "\\b(Afficher|Saisir|Supprimer|Aleatoire|Attendre)\\b",
             "name": "support.function.totoscript"
         },
         {
