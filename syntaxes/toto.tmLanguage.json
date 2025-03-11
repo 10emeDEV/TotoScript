@@ -2,15 +2,15 @@
     "scopeName": "source.totoscript",
     "patterns": [
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|vers|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
             "name": "keyword.control.totoscript"
         },
         {
-            "match": "\\b(Afficher|Saisir|Supprimer|Aleatoire|Attendre)\\b",
+            "match": "\\b(Afficher|Saisir|Supprimer|Copier|Deplacer|Aleatoire|Attendre|fonction)\\b",
             "name": "support.function.totoscript"
         },
         {
-            "match": "\\b(entier|reel|binaire|chaine|style)\\b",
+            "match": "\\b(entier|reel|binaire|chaine|style|tableau)\\b",
             "name": "storage.type.totoscript"
         },
         {
