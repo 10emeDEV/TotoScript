@@ -2,7 +2,7 @@
     "name": "totoscript",
     "displayName": "TotoScript",
     "description": "Extension for my simple programming language TotoScript, based on C++.",
-    "version": "1.4.0",
+    "version": "1.4.3",
     "publisher": "10eme",
     "repository": {
     "type": "git",

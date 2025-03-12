@@ -2,11 +2,11 @@
     "scopeName": "source.totoscript",
     "patterns": [
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|vers|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
             "name": "keyword.control.totoscript"
         },
         {
-            "match": "\\b(Afficher|Saisir|Supprimer|Copier|Deplacer|Aleatoire|Attendre|fonction)\\b",
+            "match": "\\b(Afficher|Saisir|Supprimer|Copier|Deplacer|Aleatoire|Attendre|Taille|Occurrence|Trier|Inverser|fonction)\\b",
             "name": "support.function.totoscript"
         },
         {
@@ -36,7 +36,7 @@
                 "0": { "name": "punctuation.definition.variable.totoscript" }, 
                 "1": { "name": "variable.other.totoscript" }
             }
-        }      
+        }    
     ]
     
 }
