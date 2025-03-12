@@ -2,7 +2,7 @@
     "scopeName": "source.totoscript",
     "patterns": [
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|executer|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
             "name": "keyword.control.totoscript"
         },
         {
