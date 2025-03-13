@@ -1,33 +1,61 @@
 {
     "name": "totoscript",
     "displayName": "TotoScript",
-    "description": "Extension for my simple programming language TotoScript, based on C++.",
+    "description": "My own programming language extension with a built-in compiler, based on C++. This language works with simple syntax and French keywords.",
     "version": "1.4.3",
-    "publisher": "10eme",
+    "publisher": "10emeDEV",
     "repository": {
     "type": "git",
     "url": "https://github.com/10emeDEV/totoscript-vscode.git"
     },
     "engines": {
-        "vscode": "^1.60.0"
+      "vscode": "^1.60.0"
     },
     "categories": ["Programming Languages"],
+    "main": "./extension.js",
     "contributes": {
-        "languages": [
-            {
-                "id": "totoscript",
-                "extensions": [".toto"],
-                "aliases": ["TotoScript"],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "totoscript",
-                "scopeName": "source.totoscript",
-                "path": "./syntaxes/toto.tmLanguage.json"
-            }
-        ]
+      "languages": [
+          {
+              "id": "totoscript",
+              "extensions": [".toto"],
+              "aliases": ["TotoScript"],
+              "configuration": "./language-configuration.json"
+          }
+      ],
+      "grammars": [
+          {
+              "language": "totoscript",
+              "scopeName": "source.totoscript",
+              "path": "./syntaxes/toto.tmLanguage.json"
+          }
+      ],
+      "commands": [
+        {
+          "command": "totoscript.run",
+          "title": "Run TotoScript",
+          "category": "TotoScript"
+        },
+        {
+          "command": "totoscript.addToPath",
+          "title": "Add TotoScript to PATH",
+          "category": "TotoScript"
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "totoscript.compilerPath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to the Gtoto compiler executable"
+          }
+        }
+      }
+    },
+    "activationEvents": ["onCommand:totoscript.run", "onCommand:totoscript.addToPath"],
+    "scripts": {
+      "compile": "tsc"
+    },
+    "devDependencies": {
+      "vscode": "^1.1.37"
     }
-    
-}
+} 
