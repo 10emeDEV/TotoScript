@@ -1,12 +1,12 @@
 {
     "scopeName": "source.totoscript",
-    "patterns": [
+    "patterns": [       
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|executer|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|executer|fonction|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
             "name": "keyword.control.totoscript"
         },
         {
-            "match": "\\b(Afficher|Saisir|Supprimer|Copier|Deplacer|Aleatoire|Attendre|Taille|Occurrence|Trier|Inverser|fonction)\\b",
+            "match": "\\b(Afficher|Saisir|Supprimer|Copier|Deplacer|Aleatoire|Attendre|Taille|Occurrence|Trier|Inverser)\\b",
             "name": "support.function.totoscript"
         },
         {

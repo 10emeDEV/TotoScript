@@ -5,17 +5,14 @@ const fs = require("fs");
 const os = require("os");
 
 function getGtotoPath() {
-    // Check if user has defined a path in settings.json
     let userPath = vscode.workspace.getConfiguration().get("totoscript.compilerPath");
-    if (userPath) return userPath; // Use user's path if available
+    if (userPath) return userPath;
 
     try {
-        // Check if "gtoto" is in the system PATH
         child_process.execSync("gtoto --version", { stdio: "ignore" });
-        return "gtoto"; // If found, use it
+        return "gtoto";
     } catch (error) {
-        // Otherwise, use the version inside the extension bin/
-        return path.join(__dirname, "bin", "gtoto.exe"); // ⬅️ Met `gtoto.exe`
+        return path.join(__dirname, "bin", "gtoto.exe");
     }
 }
 
@@ -36,17 +33,50 @@ function runGtoto() {
     }
 
     terminal.show();
-    
-    terminal.sendText(`"& '${gtotoCompiler}' '${filePath}'"`);
+
+    // ✅ Gestion des espaces dans les chemins sous Windows
+    if (process.platform === "win32") {
+        terminal.sendText(`& "${gtotoCompiler}" "${filePath}"`);
+    } else {
+        terminal.sendText(`"${gtotoCompiler}" "${filePath}"`);
+    }
 }
 
-
-function addToPathUnix() {
-    const homeDir = os.homedir();
-    const shellConfig = path.join(homeDir, ".bashrc"); // or ".zshrc" for macOS users
+function addToPathWindows() {
     const gtotoPath = path.join(__dirname, "bin");
 
     try {
+        // 📌 Vérifie si `gtoto` est déjà dans le PATH
+        let currentPath = child_process.execSync("reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment /v Path")
+            .toString();
+
+        if (currentPath.includes(gtotoPath)) {
+            vscode.window.showInformationMessage("Gtoto is already in the PATH.");
+            return;
+        }
+
+        // 📌 Ajoute `gtoto` au PATH global (Admin requis)
+        child_process.execSync(`setx PATH "%PATH%;${gtotoPath}" /M`, { stdio: "ignore" });
+
+        vscode.window.showInformationMessage("Gtoto has been added to PATH! Restart your computer to apply changes.");
+    } catch (err) {
+        vscode.window.showErrorMessage("Error adding Gtoto to PATH: Please run VS Code as Administrator.");
+    }
+}
+
+function addToPathUnix() {
+    const homeDir = os.homedir();
+    const shellConfig = path.join(homeDir, ".bashrc"); // ou ".zshrc" pour macOS
+    const gtotoPath = path.join(__dirname, "bin");
+
+    try {
+        // 📌 Vérifier si le chemin est déjà dans le PATH
+        let content = fs.readFileSync(shellConfig, "utf8");
+        if (content.includes(gtotoPath)) {
+            vscode.window.showInformationMessage("Gtoto is already in the PATH.");
+            return;
+        }
+
         fs.appendFileSync(shellConfig, `\nexport PATH="$PATH:${gtotoPath}"\n`);
         vscode.window.showInformationMessage("Gtoto has been added to PATH! Restart your terminal.");
     } catch (err) {

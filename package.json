@@ -19,7 +19,7 @@
               "id": "totoscript",
               "extensions": [".toto"],
               "aliases": ["TotoScript"],
-              "configuration": "./language-configuration.json"
+              "configuration": "./toto.json"
           }
       ],
       "grammars": [
