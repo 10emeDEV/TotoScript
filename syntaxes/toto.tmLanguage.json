@@ -2,7 +2,7 @@
     "scopeName": "source.totoscript",
     "patterns": [       
         {
-            "match": "\\b(si|tant|que|pour|tout|faire|executer|fonction|vers|dans|ou|et|non|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "match": "\\b(si|tant|que|pour|tout|faire|exec|fonction|procedure|retourner|fin|vers|dans|ou|et|non)\\b",
             "name": "keyword.control.totoscript"
         },
         {
@@ -10,9 +10,13 @@
             "name": "support.function.totoscript"
         },
         {
-            "match": "\\b(entier|reel|binaire|chaine|style|tableau)\\b",
+            "match": "\\b(entier|reel|binaire|chaine|style|vide)\\b",
             "name": "storage.type.totoscript"
         },
+        {
+            "match": "\\b(tableau|ms|sec|min|gras|italique|souligne|barre|clignotant|inverse)\\b",
+            "name": "entity.name.type"
+        },             
         {
             "match": "\\b[0-9]+\\b",
             "name": "constant.numeric.totoscript"
@@ -28,7 +32,7 @@
         {
             "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b",
             "name": "variable.totoscript"
-        },
+        },                    
         {
             "match": "\\$\\(([a-zA-Z_][a-zA-Z0-9_]*)\\)",
             "name": "variable.interpolation.totoscript",
@@ -36,6 +40,6 @@
                 "0": { "name": "punctuation.definition.variable.totoscript" }, 
                 "1": { "name": "variable.other.totoscript" }
             }
-        } 
+        }
     ]
 }

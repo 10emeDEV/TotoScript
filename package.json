@@ -2,7 +2,7 @@
     "name": "totoscript",
     "displayName": "TotoScript",
     "description": "My own programming language extension with a built-in compiler, based on C++. This language works with simple syntax and French keywords.",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "publisher": "10emeDEV",
     "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
               "id": "totoscript",
               "extensions": [".toto"],
               "aliases": ["TotoScript"],
-              "configuration": "./toto.json"
+              "configuration": "./languages/language-configuration.json"
           }
       ],
       "grammars": [
