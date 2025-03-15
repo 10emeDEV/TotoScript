@@ -14,6 +14,15 @@
     "categories": ["Programming Languages"],
     "main": "./extension.js",
     "contributes": {
+      "tokenColors": [
+        {
+          "scope": "entity.name.function.call.myLang",
+          "settings": {
+            "foreground": "#FFD700",
+            "fontStyle": "bold"
+          }
+        }
+      ],
       "languages": [
           {
               "id": "totoscript",
